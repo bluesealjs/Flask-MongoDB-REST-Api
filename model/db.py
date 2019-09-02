@@ -2,6 +2,7 @@ from flask_restful import Api, Resource, reqparse, fields, marshal
 from flask import Flask, url_for, request, abort, make_response, jsonify
 from constant import *
 import sys
+import json
 
 
 def query(operation, params):
@@ -32,8 +33,9 @@ def find_by_id(params):
 
 
 def update_by_id(params):
-    logger("update_by_id, params: " + params)
-    return jsonify({'message': "update_by_id, params: " + params})
+    # logger("update_by_id, params: " + params)
+    response = {"status": 200, "data": params}
+    return response
 
 
 def delete_by_id(params):

@@ -16,7 +16,7 @@ value_of_x = None
 #     return make_response(jsonify({'error': 'Not found'}), 404)
 
 
-api.add_resource(ReflectionAPI, '/api/v1/reflection', '/api/v1/reflection/<int:data>',
+api.add_resource(ReflectionAPI, '/api/v1/reflection', '/api/v1/reflection/', '/api/v1/reflection/<id>',
                  '/api/v1/reflection/<string:data>/<int:id>')
 
 
