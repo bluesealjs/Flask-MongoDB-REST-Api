@@ -13,23 +13,23 @@ def init():
     init_func()
 
 
-value_of_x = None
-
-
 def init_func():
     logger("init func is called")
+
+
+def logger(logs):
+    sys.stdout.write(str(logs) + '\n')
+
+
+value_of_x = None
 
 
 @app.route('/')
 def home():
     # print("home loaded", flush=True)
     global value_of_x
-    value_of_x = "value of x is unknown"
-    return jsonify({'message': "hello from server", "value_of_x": logger(value_of_x)})
-
-
-def logger(logs):
-    sys.stdout.write(str(logs) + '\n')
+    value_of_x = "value of x is 55"
+    return jsonify({'message': "hello from server", "value_of_x": value_of_x})
 
 
 @app.route('/db', methods=['POST'])
@@ -55,6 +55,6 @@ def db():
 
 if __name__ == '__main__':
     app.debug = True
-    Thread(target=init_func).start()
-    # init()
+    # Thread(target=init_func).start()
+    init()
     app.run(port=int(os.environ.get('PORT', 5000)))
