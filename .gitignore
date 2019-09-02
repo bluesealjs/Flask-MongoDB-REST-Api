@@ -1,4 +1,4 @@
-/config
+config/
 .idea
 /venv
 ### Python template

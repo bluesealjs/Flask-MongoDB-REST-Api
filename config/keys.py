@@ -1,1 +1,1 @@
-s = "mongodb+srv://test:<password>@flaskapicluster-syh3a.mongodb.net/test?retryWrites=true&w=majority"
+s = "mongodb+srv://test:<passwordd>@flaskapicluster-syh3a.mongodb.net/test?retryWrites=true&w=majority"
